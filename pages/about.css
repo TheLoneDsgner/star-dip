@@ -1,0 +1,717 @@
+/* ═══════════════════════════════════════════════════════════════════
+   StarDIP · about.css  —  About page styles only
+   Shared components (nav, footer, eyebrow, CTA) live in components.css
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════════
+   PAGE TOP WRAPPER (nav + hero + bento on accent bg)
+   ══════════════════════════════════════════════════════════════════ */
+.about-page-top {
+  background: var(--accent);
+  position: relative;
+  background-image: url(/images/hero-bg-img.png);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ABOUT HERO
+   ══════════════════════════════════════════════════════════════════ */
+.about-hero {
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding-block: var(--space-8);
+  display: flex;
+  justify-content: center;
+}
+
+.about-hero-content {
+  max-width: 80%;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-hero-content-text{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.about-hero-content-text h1 {
+  font-family: var(--heading-1-font-family);
+  font-size: var(--heading-1-font-size);
+  font-weight: var(--heading-1-font-weight);
+  line-height: var(--heading-1-line-height);
+  letter-spacing: var(--heading-1-letter-spacing);
+  color: var(--on-accent);
+  margin-block-end: var(--space-2);
+}
+
+.about-hero-content-text > p {
+  max-width: min(100% - 196px);
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--on-accent);
+  opacity: 0.78;
+  text-wrap: pretty;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-block-start: var(--space-2);
+  justify-content: center;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════
+   BENTO CARDS
+   ══════════════════════════════════════════════════════════════════ */
+.about-bento {
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding-block-start: var(--space-section);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-bento-row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+/* Shared card base */
+.bento-card {
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 356px;
+}
+
+/* ── Who we are — large white card, row 1 ─────────────────────── */
+.bento-who {
+  flex: 3;
+  background: var(--surface);
+  justify-content: space-between;
+}
+
+.bento-who-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-block-start: auto;
+}
+
+.bento-who h3 {
+  font-family: var(--heading-3-font-family);
+  font-size: var(--heading-3-font-size);
+  font-weight: var(--heading-3-font-weight);
+  line-height: var(--heading-3-line-height);
+  letter-spacing: var(--heading-3-letter-spacing);
+  color: var(--text);
+}
+
+.bento-who p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  color: var(--text-muted);
+}
+
+/* ── Our Mission — cream card, row 1 ──────────────────────────── */
+.bento-mission {
+  flex: 2;
+  background: var(--accent-tertiary-soft);
+  justify-content: space-between;
+}
+
+/* ── Our Vision — green card, row 2 ──────────────────────────── */
+.bento-vision {
+  flex: 2;
+  background: var(--accent-secondary-soft);
+  justify-content: space-between;
+}
+
+/* ── Our Purpose — light blue card, row 2 ────────────────────── */
+.bento-purpose {
+  flex: 3;
+  background: var(--accent-soft);
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--space-6);
+}
+
+.bento-purpose-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+.bento-purpose-image {
+  flex: 0 0 200px;
+  align-self: stretch;
+  background: var(--paper-sunken);
+  border-radius: var(--radius-md);
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.bento-purpose-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Large quote text used in Mission and Vision cards */
+.bento-large-text {
+  font-family: var(--heading-4-font-family);
+  font-size: var(--heading-4-font-size);
+  font-weight: var(--heading-4-font-weight);
+  line-height: var(--heading-4-line-height);
+  letter-spacing: var(--heading-4-letter-spacing);
+  color: var(--text);
+  margin-block-start: auto;
+}
+
+/* Heading inside Purpose card */
+.bento-purpose h4 {
+  font-family: var(--heading-4-font-family);
+  font-size: var(--heading-4-font-size);
+  font-weight: var(--heading-4-font-weight);
+  line-height: var(--heading-4-line-height);
+  letter-spacing: var(--heading-4-letter-spacing);
+  color: var(--text);
+}
+
+.bento-purpose p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MAIN CONTENT AREA
+   ══════════════════════════════════════════════════════════════════ */
+.about-main {
+  background: var(--paper);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CORE VALUES
+   ══════════════════════════════════════════════════════════════════ */
+.about-values {
+  background: var(--paper);
+  padding-block: var(--space-section);
+  margin-block: var(--space-6);
+}
+
+.about-values-container{
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  background: var(--surface);
+}
+.about-values-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+/* Left column: eyebrow + heading + image */
+.about-values-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-6);
+  position: sticky;
+  top: var(--space-8);
+  height: 100%;
+}
+
+.about-values-left h2 {
+  font-family: var(--heading-2-font-family);
+  font-size: var(--heading-2-font-size);
+  font-weight: var(--heading-2-font-weight);
+  line-height: var(--heading-2-line-height);
+  letter-spacing: var(--heading-2-letter-spacing);
+  color: var(--text);
+}
+
+.about-values-img {
+  width: 100%;
+  aspect-ratio: 4 / 2.5;
+  background: var(--paper-sunken);
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.about-values-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right column: 2×3 grid of value cards */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.value-card {
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.value-card h5 {
+  font-family: var(--body-medium-bold-font-family);
+  font-size: var(--body-medium-bold-font-size);
+  font-weight: var(--body-medium-bold-font-weight);
+  line-height: var(--body-medium-bold-line-height);
+  letter-spacing: var(--body-medium-bold-letter-spacing);
+  color: var(--text);
+}
+
+.value-card p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text-muted);
+}
+
+
+/* OUR AREA OF FOCUS */
+.our-focus {
+  flex-grow: 1;
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  margin-block-end: var(--space-section);
+  padding-block-end: var(--space-6);
+}
+
+.our-focus-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.our-focus-text-content {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.our-focus-text-content-btn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.our-focus-text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.our-focus-text-wrapper h2 {
+  max-width: 460px;
+  font-family: var(--heading-2-font-family);
+  font-size: var(--heading-2-font-size);
+  font-weight: var(--heading-2-font-weight);
+  line-height: var(--heading-2-line-height);
+  letter-spacing: var(--heading-2-letter-spacing);
+  color: var(--text);
+  margin-block-end: var(--space-1);
+}
+
+.our-focus-text-wrapper h2 span {
+  color: var(--text-subtle);
+}
+
+.our-focus-text-wrapper p {
+  max-width: 400px;
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text-muted);
+}
+
+.focus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.card-focus {
+  background: var(--surface);
+  padding: var(--space-2);
+  border-radius: var(--radius-xl);
+  display: flex;
+  gap: var(--space-2);
+  justify-content: space-between;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  min-width: 50%;
+}
+
+.card-text span {
+  width: 44px;
+  height: 44px;
+  background: var(--paper-sunken);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-full);
+  font-family: var(--heading-6-font-family);
+  font-size: var(--heading-6-font-size);
+  font-weight: var(--heading-6-font-weight);
+  line-height: 1;
+  color: var(--text);
+}
+
+.card-text-container h5 {
+  font-family: var(--heading-5-font-family);
+  font-size: var(--heading-5-font-size);
+  font-weight: var(--heading-5-font-weight);
+  line-height: var(--heading-5-line-height);
+  letter-spacing: var(--heading-5-letter-spacing);
+  color: var(--text);
+  text-wrap: pretty;
+  margin-block-end: var(--space-1);
+}
+
+.card-text-container p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text-muted);
+}
+
+.card-image {
+  width: 44%;
+  min-width: 180px;
+  min-height: 220px;
+  background: var(--paper-sunken);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ══════════════════════════════════════════════════════════════════
+   PARTNERSHIPS & ACCOUNTABILITY
+   ══════════════════════════════════════════════════════════════════ */
+.about-pillars {
+  background: var(--paper);
+}
+
+.about-pillars-wrapper {
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding-block-end: var(--space-section);
+  margin-block: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: start;
+  justify-content: space-between;
+}
+
+/* Shared card shell */
+.pillar-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-height: 480px;
+
+  gap: var(--space-4);
+}
+
+/* Left — indigo accent */
+.pillar-partnerships {
+  background: var(--accent);
+}
+
+/* Right — green */
+.pillar-accountability {
+  background: var(--accent-secondary);
+}
+
+/* Text block inside each card */
+.pillar-card-text {
+  padding: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--space-10);
+  height: 100%;
+}
+
+.pilar-card-text-body{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block-end: var(--space-6);
+}
+
+.pillar-card-text h3 {
+  font-family: var(--heading-4-font-family);
+  font-size: var(--heading-4-font-size);
+  font-weight: var(--heading-4-font-weight);
+  line-height: var(--heading-4-line-height);
+  letter-spacing: var(--heading-4-letter-spacing);
+  color: var(--on-accent);
+}
+
+.pillar-card-text p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Eyebrow on coloured bg */
+.eyebrow--light {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--on-accent);
+}
+
+/* Ghost button on coloured bg */
+.pillar-btn {
+  align-self: flex-start;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--on-accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pillar-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.85);
+    color: var(--on-accent);
+  }
+}
+
+/* Image fills remaining card height */
+.pillar-card-image {
+  /* flex: 1; */
+  flex-grow:  1;
+  /* min-height: 200px; */
+  /* aspect-ratio: 12 / 9; */
+  background: rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  width: 100%;
+  /* inner rounded corners where image meets card edge */
+  /* margin-inline: var(--space-3); */
+  /* width: calc(100% - var(--space-3) * 2); */
+  border-radius: var(--radius-xl);
+  /* margin-block-end: var(--space-3); */
+  background-color: red;
+  opacity: 0.2;
+  display: none;
+}
+
+
+/* Accountability: image at top, so push margin to top */
+.pillar-accountability .pillar-card-image {
+  margin-block-end: 0;
+  margin-block-start: var(--space-3);
+  /* order: 1; */
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   RESPONSIVE — about page
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .about-hero-content {
+    margin-block: 56px;
+  }
+
+  .about-hero-content-text > p {
+    max-width: min(100% - 48px);
+  }
+
+  .about-hero-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .about-bento-row {
+    flex-direction: column;
+  }
+
+  .bento-purpose {
+    flex-direction: column;
+  }
+
+  .bento-purpose-image {
+    flex: 0 0 auto;
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .about-values-container{
+  width: min(100% - 3rem, 1120px);
+  padding: var(--space-4);
+  gap: var(--space-4);
+  }
+
+  .about-values-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .about-values-left {
+    position: static;
+  }
+
+  .about-pillars-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+    .our-focus-text-content-btn {
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: nowrap;
+  }
+
+  .our-focus-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-1);
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .our-focus-text-wrapper h2 {
+    max-width: 100%;
+  }
+
+  .our-focus-text-wrapper p {
+   max-width: 100%;
+  }
+
+  .focus-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .card-focus {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+
+  .card-text { min-width: 100%; }
+
+  .card-image {
+    width: 100%;
+    min-height: 220px;
+    border-radius: var(--radius-sm);
+  }
+
+}
+
+@media (max-width: 440px) {
+  .about-hero-content-text > p {
+    max-width: min(100% - 0px);
+  }
+  .about-hero-content {
+    max-width: 100%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    align-items: start;
+    text-align: start;
+  }
+  .about-hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-content: start;
+  }
+
+  .about-hero-actions a{
+    width: fit-content;
+  }
+
+  .our-focus-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-1);
+    flex-direction: column;
+    width: 100%;
+  }
+}

@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════════════════════
+   StarDIP · button.css
+   Reusable .btn component — three variants (primary, secondary, ghost),
+   all interactive states, and a disabled state.
+   All values use layer-2/3 tokens from stardip-foundation.css only.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: fit-content;
+
+  /* Geometry */
+  padding: var(--space-3) var(--space-5);
+  border: 0px solid transparent;
+  border-radius: var(--radius-md);
+
+  /* Typography — label-semibold applied in full */
+  font-family: var(--label-semibold-font-family);
+  font-size: var(--body-medium-medium-font-size);
+  font-weight: var(--label-semibold-font-weight);
+  line-height: var(--body-medium-medium-line-height);
+  letter-spacing: var(--label-semibold-letter-spacing);
+
+  /* Behaviour */
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  /* Transitions */
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+/* Active press — shared across all variants */
+.btn:not(:disabled):not([aria-disabled="true"]):active {
+  transform: scale(0.95);
+}
+
+/* Focus — visible keyboard ring on every variant */
+.btn:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--focus-ring);
+    color: #ffffff;
+}
+
+/* ── Primary ──────────────────────────────────────────────────────── */
+.btn--primary {
+  background: var(--action);
+  color: var(--on-action);
+  /* box-shadow: var(--shadow-x-sm); */
+  box-shadow: 0 4px 12px -4px rgba(10, 6, 6, 0.5), 0 -3px 4px 0 rgba(0, 0, 0, 0.20) inset, 0 1px 2px 0 rgba(255, 255, 255, 0.1) inset;
+
+}
+
+.btn--with-icon{
+  background: var(--surface);
+  color: var(--on-action-secondary);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-5);
+}
+
+.btn--primary-icon {
+  display: inline-flex;
+  padding: var(--space-3);
+  background: #83FD80;
+  border-radius: var(--radius-sm);
+}
+
+/* 0 15px 30px -12px #1B8C45 */
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--action-hover);
+    background: #83FD80;
+    box-shadow: 0 20px 40px -16px rgba(22, 30, 133, 0.7);
+    color: var(--on-action-secondary);
+    transition: background 0.3s ease-in-out;
+  }
+}
+
+.btn--primary:not(:disabled):not([aria-disabled="true"]):active {
+  background: var(--action-pressed);
+  color: var(--text-white);
+}
+
+/* ── Secondary ────────────────────────────────────────────────────── */
+.btn--secondary {
+  background: var(--action-secondary);
+  color: var(--on-action-secondary);
+  /* box-shadow: 0 6px 12px -8px rgba(22, 30, 133, 0.3), 0 0 4px 2px rgba(255, 255, 255, 0.4), 0 -2px 4px 0 rgba(22, 30, 133, 0.15) inset, 0 0px 0px 0 rgba(22, 30, 133, 0.02) inset; */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--secondary:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--action-secondary-hover);
+    box-shadow: 0 20px 40px -12px rgba(22, 30, 133, 0.5), 0 0 4px 2px rgba(255, 255, 255, 0.25), 0 -2px 4px 0 rgba(22, 30, 133, 0.15) inset;
+  }
+}
+
+/* ── Ghost (outlined) ─────────────────────────────────────────────── */
+.btn--ghost {
+  background: transparent;
+  color: var(--on-action-secondary);
+  border: 1px solid var(--border);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--ghost:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--surface-hover);
+    background: hsla(0, 0%, 100%, 0.12);
+    border-color: var(--border-strong);
+    color: var(--text-link-hover);
+  }
+}
+
+.btn--ghost:not(:disabled):not([aria-disabled="true"]):active {
+  background: var(--surface-selected);
+  background: hsla(0, 0%, 100%, 0.12);
+}
+
+/* -- Ghost (outlined) on solid background */
+.btn--on-solid-bg {
+  background: hsla(0, 0%, 100%, 0.05);
+  color: var(--on-accent);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--on-solid-bg:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--surface-hover);
+    background: hsla(0, 0%, 100%, 0.12);
+    border: 1px solid hsla(0, 0%, 100%, 0.09);
+    color: #83FD80;
+  }
+}
+
+/* ── Danger ───────────────────────────────────────────────────────── */
+.btn--danger {
+  background: var(--action-danger);
+  color: var(--on-action-danger);
+  box-shadow: var(--shadow-x-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--danger:not(:disabled):not([aria-disabled="true"]):hover {
+    background: var(--action-danger-hover);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* ── Disabled — applies to all variants ───────────────────────────── */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  background: var(--action-disabled);
+  color: var(--on-action-disabled);
+  border-color: var(--border);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Override focus ring on disabled — it should not appear */
+.btn:disabled:focus-visible,
+.btn[aria-disabled="true"]:focus-visible {
+  box-shadow: none;
+}
+
+/* ── Size modifiers ───────────────────────────────────────────────── */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--footnote-font-size);
+  font-weight: var(--label-semibold-font-weight);
+  letter-spacing: var(--label-semibold-letter-spacing);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--body-medium-medium-font-size);
+  font-weight: var(--body-medium-medium-font-weight);
+  letter-spacing: var(--body-medium-medium-letter-spacing);
+}
+
+/* ── Icon-only pill ───────────────────────────────────────────────── */
+.btn--icon {
+  padding: var(--space-3);
+  aspect-ratio: 1;
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

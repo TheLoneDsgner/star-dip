@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="description" content="About Star Development Impact Partners — who we are, our mission and the team behind the work." />
+  <meta name="theme-color" content="#edf2ff" />
+  <title>About — StarDIP</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Petrona:wght@600&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <!-- Design tokens -->
+  <link rel="stylesheet" href="stardip-foundation.css" />
+  <!-- Shared components: nav, eyebrow, CTA banner, footer -->
+  <link rel="stylesheet" href="components.css" />
+  <!-- Page styles -->
+  <link rel="stylesheet" href="about.css" />
+  <!-- Button component -->
+  <link rel="stylesheet" href="button.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+  <div class="about-page-top">
+
+    <header class="site-header" id="site-header">
+      <nav class="nav" aria-label="Main">
+        <div class="nav-links-and-logo">
+          <a href="index.html" class="brand">
+            <img src="/logo/star-secondary-brand-mix.svg" alt="StarDIP logo">
+          </a>
+          <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" aria-current="page" class="nav-item active">About</a>
+            <a href="index.html#what-we-do" class="nav-item">What we do</a>
+            <a href="index.html" class="nav-item">Impact</a>
+          </div>
+        </div>
+        <button class="btn btn--secondary nav-cta">Partner With Us</button>
+
+        <!-- Hamburger — mobile only -->
+        <button
+          class="nav-hamburger"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-mobile-menu"
+          aria-label="Open menu"
+        >
+          <i class="ph-bold ph-list nav-hamburger__icon--open" aria-hidden="true"></i>
+          <i class="ph-bold ph-x   nav-hamburger__icon--close" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile menu drawer -->
+    <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+      <a href="index.html" class="nav-mobile-link">Home</a>
+      <a href="about.html" class="nav-mobile-link active">About</a>
+      <a href="index.html#what-we-do" class="nav-mobile-link">What we do</a>
+      <a href="index.html" class="nav-mobile-link">Impact</a>
+      <a href="#cta" class="btn btn--secondary nav-mobile-cta">Partner With Us</a>
+    </div>
+
+    <!-- About hero -->
+    <div class="about-hero">
+      <div class="about-hero-content">
+        <div class="about-hero-content-text">
+          <h1>Healthier Communities.<br>Stronger Futures.</h1>
+          <p>We work with communities and partners to advance health, strengthen livelihoods, and create sustainable development opportunities.</p>
+        </div>
+        <div class="about-hero-actions">
+          <a href="#our-focus" class="btn btn--primary btn--with-icon">Explore Our Work <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+          <a href="#cta" class="btn btn--ghost btn--on-solid-bg">Partner With Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento cards — Who we are, Mission, Vision, Purpose -->
+  <div class="about-bento">
+
+      <!-- Row 1 -->
+      <div class="about-bento-row">
+
+        <div class="bento-card bento-who" id="who-we-are">
+          <span class="eyebrow"><div class="eyebrow-dot"></div>Who we are</span>
+          <div class="bento-who-body">
+            <h3>Development Starts With People</h3>
+            <p>STAR DEVELOPMENT IMPACT PARTNERS (StarDIP) is a Nigerian development organization working to build stronger communities through inclusive, locally driven solutions.</p>
+            <p>We bring people, expertise, and partnerships together to address challenges affecting health, livelihoods, and the environment.</p>
+          </div>
+        </div>
+
+        <div class="bento-card bento-mission">
+          <span class="eyebrow"><div class="eyebrow-dot"></div>Our Mission</span>
+          <p class="bento-large-text">To strengthen communities and drive sustainable development through inclusive, evidence-informed solutions.</p>
+        </div>
+
+      </div>
+
+      <!-- Row 2 -->
+      <div class="about-bento-row">
+
+        <div class="bento-card bento-vision">
+          <span class="eyebrow"><div class="eyebrow-dot"></div>Our Vision</span>
+          <p class="bento-large-text">A healthier, more resilient, and inclusive society where every community can thrive.</p>
+        </div>
+
+        <div class="bento-card bento-purpose">
+          <div class="bento-purpose-text">
+            <span class="eyebrow"><div class="eyebrow-dot"></div>Our Purpose</span>
+            <div class="purpose-body">
+              <h4>Creating Change That Lasts</h4>
+              <p>We believe communities thrive when people have the knowledge, opportunities, and resources to shape their future.</p>
+              <p>Our work connects health, livelihoods, and environmental sustainability to create lasting impact.</p>
+            </div>
+          </div>
+          <div class="bento-purpose-image" aria-hidden="true"> <img src="/images/climate.jfif" alt="image-creating-change-that-last"></div>
+        </div>
+
+      </div>
+
+  </div>
+
+
+  <main class="about-main">
+
+
+    <!-- CORE VALUES -->
+    <section class="about-values">
+      <div class="about-values-container">
+        <span class="eyebrow"><div class="eyebrow-dot"></div>Our Core Values</span>
+
+        <div class="about-values-wrapper">
+
+          <!-- Left: heading + image -->
+          <div class="about-values-left">
+          <h2>What guide us</h2>
+          <!-- Swap for real image when ready -->
+          <!-- <img src="/images/values-photo.jpg" alt="Our team in the field" class="about-values-img"> -->
+          <div class="about-values-img" aria-hidden="true"> <img src="/images/human-impact.jfif" alt="image-what-guide-star-dip"></div>
+          </div>
+
+          <!-- Right: 2×3 value cards grid -->
+          <div class="about-values-grid">
+
+          <div class="value-card">
+            <h5>People First</h5>
+            <p>We put people's needs, dignity, and well-being at the centre of our work.</p>
+          </div>
+
+          <div class="value-card">
+            <h5>Locally Led</h5>
+            <p>We build solutions around community priorities and local knowledge.</p>
+          </div>
+
+          <div class="value-card">
+            <h5>Evidence-Informed</h5>
+            <p>We use research, data, and learning to guide our decisions.</p>
+          </div>
+
+          <div class="value-card">
+            <h5>Partnership-Driven</h5>
+            <p>We collaborate to create better, more sustainable outcomes.</p>
+          </div>
+
+          <div class="value-card">
+            <h5>Sustainability-Focused</h5>
+            <p>We build capacity for lasting change beyond individual projects.</p>
+          </div>
+
+          <div class="value-card">
+            <h5>Results-Oriented</h5>
+            <p>We measure progress, learn, and continuously improve.</p>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+          <!-- OUR AREA OF FOCUS -->
+    <section class="our-focus hide" id="our-focus">
+      <div class="our-focus-wrapper">
+          <div class="our-focus-text-content">
+              <span class="eyebrow"> <div class="eyebrow-dot"></div> Our areas of focus</span>
+              <div class="our-focus-text-content-btn">
+                <div class="our-focus-text-wrapper">
+                <h2>Connecting People, <span>Systems and Solutions</span></h2>
+                <p>We work across interconnected areas of development, recognizing that healthier people, stronger livelihoods and resilient environments are essential to thriving communities.</p>
+                </div>
+                <a href="./our-focus.html" class="btn btn--primary focus-btn">Discover More</a>
+              </div>
+          </div>
+
+          <div class="focus-cards-grid">
+            <!-- card 1 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>1</span>
+                <div class="card-text-container">
+                  <h5>One Health</h5>
+                  <p>Healthy People. Healthy Animals. Healthy Environments.</p>
+                </div>
+              </div>
+              
+              <div class="card-image"> <img src="/images/1-health.jfif" alt="image-one-health"></div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>2</span>
+                <div class="card-text-container">
+                  <h5>Health & Community Well-being</h5>
+                  <p>Promoting health awareness, prevention and access to appropriate community health services.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/wel-being.jfif" alt="image-community-well-being"></div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>3</span>
+                <div class="card-text-container">
+                  <h5>Pad Without Price</h5>
+                  <p>Because Dignity Should Never Have a Price.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/pad-education-without-price.jfif" alt="image-pad-education"></div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>4</span>
+                <div class="card-text-container">
+                  <h5>Agriculture & Sustainable Livelihood</h5>
+                  <p>Growing Food. Strengthening Livelihoods. Building Resilience.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/agro.jfif" alt="image-livelihood-through-agriculture"></div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    
+
+    <!-- PARTNERSHIPS & ACCOUNTABILITY -->
+    <section class="about-pillars">
+      <div class="about-pillars-wrapper">
+
+        <!-- Left card: Partnerships — accent bg, text top, image bottom -->
+        <div class="pillar-card pillar-partnerships">
+          <div class="pillar-card-text">
+            <span class="eyebrow eyebrow--light"><div class="eyebrow-dot"></div>Partnerships</span>
+            <div class="pillar-card-text-content">
+              <div class="pilar-card-text-body">
+              <h3>Working Together for Greater Impact</h3>
+              <p>We collaborate with communities, institutions, and development partners to turn shared priorities into practical solutions.</p>
+            </div>
+            
+            <a href="#" class="btn btn--ghost btn--on-solid-bg">Partner With Us</a>
+            </div>
+          </div>
+          <!-- Swap div for <img src="..." alt="..."> when ready -->
+          <!-- <img src="/images/partnerships-photo.jpg" alt="Community training session" class="pillar-card-image"> -->
+          <div class="pillar-card-image" aria-hidden="true"></div>
+        </div>
+
+        <!-- Right card: Accountability — green bg, image top, text bottom -->
+        <div class="pillar-card pillar-accountability">
+          <!-- Swap div for <img src="..." alt="..."> when ready -->
+          <!-- <img src="/images/accountability-photo.jpg" alt="Community accountability session" class="pillar-card-image"> -->
+
+          <div class="pillar-card-text">
+            <span class="eyebrow eyebrow--light"><div class="eyebrow-dot"></div>Accountability &amp; Safeguarding</span>
+            <div class="pillar-card-text-content">
+                <div class="pilar-card-text-body">
+                  <h3>Building Trust Through Accountability</h3>
+                  <p>We are committed to ethical conduct, transparency, responsible programme management, and safe, inclusive environments for everyone we serve.</p>
+              </div>
+          
+              <a href="#" class="btn btn--ghost btn--on-solid-bg">Partner With Us</a>
+            </div>
+          </div>
+          <div class="pillar-card-image" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+    <!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Let's Create Impact Together</h2>
+        <p>Whether you want to collaborate, strengthen your organization's capacity or support a community programme, let's explore what we can achieve together.</p>
+
+      <div class="cta-banner-actions">
+          <a href="#" class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+          <a href="#" class="btn btn--ghost btn--on-solid-bg">Explore Our Work</a>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="footer-inner">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <img src="/logo/Star sec brand-white.svg" alt="StarDIP" class="footer-logo">
+        <p>STAR — Development Impact Partners — connects capital, expertise and community to accelerate sustainable development</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="Facebook">
+            <i class="ph-bold ph-facebook-logo" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="X / Twitter">
+            <i class="ph-bold ph-x-logo" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+            <i class="ph-bold ph-linkedin-logo" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav columns -->
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-nav-col">
+          <h6>Explore</h6>
+          <a href="#">About</a>
+          <a href="#">Programs</a>
+          <a href="#">Impact</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Get involve</h6>
+          <a href="#">Partner</a>
+          <a href="#">Volunteer</a>
+          <a href="#">Support</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Accountability</h6>
+          <a href="#">Privacy</a>
+          <a href="#">Governance</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Contact</h6>
+          <a href="#">Email</a>
+          <a href="#">Phone number</a>
+        </div>
+      </nav>
+
+    </div>
+
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© 2026 STAR DEVELOPMENT IMPACT PARTNERS.</span>
+      <span>All Rights Reserved.</span>
+    </div>
+
+      <!-- Large watermark -->
+    <div class="footer-watermark" >
+      <img src="/images/footer-watermark.png" alt="watermark-stardip-logo">
+    </div>
+
+  </footer>
+
+
+  <script>
+    // ── Sticky nav scroll state ──────────────────────────────────────
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    // ── Mobile menu ──────────────────────────────────────────────────
+    const navToggle  = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      mobileMenu.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('nav-open', !isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  </script>
+</body>
+</html>

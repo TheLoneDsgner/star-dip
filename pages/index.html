@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="description" content="Star Development Impact Partners — Building Capacity. Driving Impact. Transforming Communities." />
+  <meta name="theme-color" content="#edf2ff" />
+  <title>StarDIP — Building Capacity. Driving Impact. Transforming Communities.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Petrona:wght@600&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <!-- Design tokens -->
+  <link rel="stylesheet" href="stardip-foundation.css" />
+  <!-- Shared components: nav, eyebrow, CTA banner, footer -->
+  <link rel="stylesheet" href="components.css" />
+  <!-- Page styles -->
+  <link rel="stylesheet" href="index.css" />
+  <!-- Button component -->
+  <link rel="stylesheet" href="button.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+
+
+  <main class="main-container">
+
+    <!-- navigation and hero -->
+
+    <div class="hero-and-nav">
+
+        <!-- navigation -->
+        <header class="site-header" id="site-header">
+            <nav class="nav" aria-label="Main">
+                <div class="nav-links-and-logo">
+                    <a href="index.html" class="brand"> <img src="/logo/star-secondary-brand-mix.svg" alt="star-dip-logo"> </a>
+
+                    <div class="nav-links">
+                        <a href="index.html" aria-current="page" class="nav-item active">Home</a>
+                        <a href="about.html" class="nav-item">About</a>
+                        <a href="#what-we-do" class="nav-item">What we do</a>
+                        <a href="index.html" class="nav-item">Impact</a>
+                    </div>
+                </div>
+                <button class="btn btn--secondary nav-cta">Partner With Us</button>
+
+                <!-- Hamburger — mobile only -->
+                <button
+                  class="nav-hamburger"
+                  id="nav-toggle"
+                  aria-expanded="false"
+                  aria-controls="nav-mobile-menu"
+                  aria-label="Open menu"
+                >
+                  <i class="ph-bold ph-list nav-hamburger__icon--open" aria-hidden="true"></i>
+                  <i class="ph-bold ph-x   nav-hamburger__icon--close" aria-hidden="true"></i>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Mobile menu drawer -->
+        <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+          <a href="index.html" class="nav-mobile-link active">Home</a>
+          <a href="about.html" class="nav-mobile-link">About</a>
+          <a href="#what-we-do" class="nav-mobile-link">What we do</a>
+          <a href="index.html" class="nav-mobile-link">Impact</a>
+          <a href="#cta" class="btn btn--secondary nav-mobile-cta">Partner With Us</a>
+        </div>
+
+
+
+        <!-- hero -->
+         <div class="home-hero">
+            <div class="home-hero-content">
+              <h1>Building Capacity. Driving Impact. Transforming Communities.</h1>
+              <p>STAR DIP works with communities, institutions and partners to create practical solutions to health, livelihood, environmental and social challenges.</p>
+            
+              <div class="hero-button-wrapper">
+                <a href="#our-focus" class="btn btn--primary btn--with-icon">Explore Our Work <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+                <button class="btn btn--ghost btn--on-solid-bg">Partner With Us</button>
+            </div>
+            </div>
+         </div>
+    </div>
+
+    <section class="about-home">
+      <div class="about-wrapper">
+          <div class="about-text-content">
+            <span class="eyebrow"> <div class="eyebrow-dot"></div> Who we are</span>
+
+            <div class="about-text-wrapper">
+              <h2>Healthier Communities. Stronger Futures.</h2>
+              <p>We believe sustainable development happens when people have the knowledge, opportunities and systems to shape their own future.</p>
+            </div> 
+            
+            <a href="./about.html" class="btn btn--primary">Discover StartDIP</a>
+          </div>
+
+          <div class="about-image">
+            <img src="/images/about-img.jfif" alt="about-image">
+          </div>
+        </div>
+    </section>
+
+      <!-- OUR AREA OF FOCUS -->
+    <section class="our-focus" id="our-focus">
+      <div class="our-focus-wrapper">
+          <div class="our-focus-text-content">
+              <span class="eyebrow"> <div class="eyebrow-dot"></div> Our areas of focus</span>
+              <div class="our-focus-text-content-btn">
+                <div class="our-focus-text-wrapper">
+                <h2>Connecting People, <span>Systems and Solutions</span></h2>
+                <p>We work across interconnected areas of development, recognizing that healthier people, stronger livelihoods and resilient environments are essential to thriving communities.</p>
+                </div>
+                <a href="./our-focus.html" class="btn btn--primary focus-btn">Discover More</a>
+              </div>              
+          </div>
+
+          <div class="focus-cards-grid">
+            <!-- card 1 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>1</span>
+                <div class="card-text-container">
+                  <h5>One Health</h5>
+                  <p>Healthy People. Healthy Animals. Healthy Environments.</p>
+                </div>
+              </div>
+              
+              <div class="card-image"> <img src="/images/1-health.jfif" alt="image-one-health"></div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>2</span>
+                <div class="card-text-container">
+                  <h5>Health & Community Well-being</h5>
+                  <p>Promoting health awareness, prevention and access to appropriate community health services.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/wel-being.jfif" alt="health-and-community-well"></div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>3</span>
+                <div class="card-text-container">
+                  <h5>Pad Without Price</h5>
+                  <p>Because Dignity Should Never Have a Price.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/pad-without-price.jfif" alt="image-pad-without-price"></div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="card-focus">
+              <div class="card-text">
+                <span>4</span>
+                <div class="card-text-container">
+                  <h5>Agriculture & Sustainable Livelihood</h5>
+                  <p>Growing Food. Strengthening Livelihoods. Building Resilience.</p>
+                </div>
+              </div>
+
+              <div class="card-image"> <img src="/images/agro.jfif" alt=""></div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+
+    <!-- TECHNICAL EXPERTISE -->
+    <section class="technical" id="what-we-do">
+      <div class="technical-wrapper">
+
+        <!-- Left: label + heading + service list -->
+        <div class="technical-left">
+          <span class="eyebrow">
+            <div class="eyebrow-dot"></div>
+            Technical Expertise
+          </span>
+
+          <div class="technical-text">
+            <h2>Building Capacity.<br />Strengthening Systems.</h2>
+            <p>We support individuals, community groups, civil society organizations and institutions through training, mentoring and technical support.</p>
+          </div>
+
+          <div class="technical-list">
+            <div class="technical-item">
+              <span class="technical-item-icon" aria-hidden="true">
+                <i class="ph-duotone ph-briefcase"></i>
+              </span>
+              <div class="technical-item-content">
+                <h5>Project &amp; Grant Management</h5>
+                <p>We support individuals, community groups, civil society organization</p>
+              </div>
+            </div>
+
+            <div class="technical-item">
+              <span class="technical-item-icon" aria-hidden="true">
+                <i class="ph-duotone ph-chart-line-up"></i>
+              </span>
+              <div class="technical-item-content">
+                <h5>Monitoring, Evaluation &amp; Learning</h5>
+                <p>We support individuals, community groups, civil society organization</p>
+              </div>
+            </div>
+
+            <div class="technical-item">
+              <span class="technical-item-icon" aria-hidden="true">
+                <i class="ph-duotone ph-users-three"></i>
+              </span>
+              <div class="technical-item-content">
+                <h5>Training &amp; Mentoring</h5>
+                <p>We support individuals, community groups, civil society organization</p>
+              </div>
+            </div>
+
+            <div class="technical-item">
+              <span class="technical-item-icon" aria-hidden="true">
+                <i class="ph-duotone ph-shield-check"></i>
+              </span>
+              <div class="technical-item-content">
+                <h5>Governance &amp; Safeguarding</h5>
+                <p>We support individuals, community groups, civil society organization</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: empty image + callout text -->
+        <div class="technical-right">
+          <div class="technical-image" role="img" aria-label="Technical expertise in action"> <img src="/images/capacity.jfif" alt=""></div>
+
+          <div class="technical-callout">
+            <h5>Building People. Strengthening Institutions. Sustaining Impact.</h5>
+            <p>Sustainable development depends on the ability of people and institutions to continue delivering results beyond the life of a project.</p>
+            <button class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FEATURED INITIATIVE -->
+    <section class="initiative" id="initiative">
+
+      <!-- Header row -->
+      <div class="initiative-header">
+        <span class="eyebrow">
+          <div class="eyebrow-dot"></div>
+          Featured Initiative
+        </span>
+
+        <div class="initiative-nav">
+          <span class="initiative-current-title" id="initiative-current-title">Pad Without Price</span>
+          <button class="initiative-nav-btn" id="initiative-prev" aria-label="Previous initiative">
+            <i class="ph-bold ph-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button class="initiative-nav-btn" id="initiative-next" aria-label="Next initiative">
+            <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable card track -->
+      <div class="initiative-track" id="initiative-track">
+
+        <article class="initiative-card">
+          <div class="initiative-card-body">
+            <h3>Because Dignity Should Never Have a Price.</h3>
+            <p>Every girl deserves the opportunity to manage her period safely, confidently and with dignity.</p>
+            <a href="#" class="btn btn--secondary">Explore initiative</a>
+          </div>
+          <div class="initiative-card-image" aria-hidden="true"> <img src="/images/pad.jfif" alt="image-pad-without-price"></div>
+        </article>
+
+        <article class="initiative-card">
+          <div class="initiative-card-body">
+            <h3>Building Stronger Livelihoods Through Agriculture</h3>
+            <p>When farmers have access to practical knowledge and support, they are better equipped to strengthen their livelihoods and build resilience.</p>
+            <a href="#" class="btn btn--secondary">Explore initiative</a>
+          </div>
+          <div class="initiative-card-image" aria-hidden="true"> <img src="/images/agriculture.jfif" alt="image-livelihood-through-agriculture"></div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- STORIES OF CHANGE -->
+    <section class="stories" id="impact">
+      <div class="stories-wrapper">
+
+        <!-- Section header — centred -->
+        <div class="stories-header">
+          <span class="eyebrow">
+            <div class="eyebrow-dot"></div>
+            Stories of Change
+          </span>
+          <h2>Behind Every Programme Is a Story</h2>
+        </div>
+
+        <!-- Two-column card grid -->
+        <div class="stories-grid">
+
+          <article class="story-card">
+            <div class="story-card-image" aria-hidden="true"> <img src="/images/agriculture.jfif" alt="image-growing-stronger-together"></div>
+            <div class="story-card-content">
+              <h3>Growing Stronger, Together</h3>
+              <p>How access to agricultural knowledge can help communities build more resilient livelihoods.</p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <div class="story-card-image" aria-hidden="true"> <img src="/images/pad-without-price.jfif" alt="image-menstrual-health-education"></div>
+            <div class="story-card-content">
+              <h3>Confidence Through Menstrual Health Education</h3>
+              <p>Why accurate information and access to menstrual products matter for girls' dignity.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- OUR APPROACH -->
+    <section class="approach" id="our-approach">
+      <div class="approach-wrapper">
+
+        <!-- Centred header -->
+        <div class="approach-header">
+          <span class="eyebrow">
+            <div class="eyebrow-dot"></div>
+            Our Approach
+          </span>
+          <h2>From Community Priorities to Sustainable Impact</h2>
+        </div>
+
+        <!-- 3-column bento: left cards | centre image | right cards -->
+        <div class="approach-bento">
+
+          <!-- Left column: steps 1 & 3 -->
+          <div class="approach-col">
+            <div class="approach-card">
+              <span class="approach-number">1</span>
+              <div class="approach-card-text">
+                <h5>Listen &amp; Understand</h5>
+                <p>We engage communities and stakeholders to understand their needs, priorities, and local realities before designing any intervention.</p>
+              </div>
+            </div>
+            <div class="approach-card">
+              <span class="approach-number">3</span>
+              <div class="approach-card-text">
+                <h5>Implement &amp; Measure</h5>
+                <p>We put solutions into action, track progress, and assess outcomes to understand what works and what needs refining.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Centre image placeholder -->
+          <div class="approach-image" role="img" aria-label="Our approach in action"> <img src="/images/youth-dev.jfif" alt="image-sustainable-impact"></div>
+
+          <!-- Right column: steps 2 & 4 -->
+          <div class="approach-col">
+            <div class="approach-card">
+              <span class="approach-number">2</span>
+              <div class="approach-card-text">
+                <h5>Co-create &amp; Build Capacity</h5>
+                <p>We work alongside communities and partners to develop practical solutions and strengthen local capacity for long-term ownership.</p>
+              </div>
+            </div>
+            <div class="approach-card">
+              <span class="approach-number">4</span>
+              <div class="approach-card-text">
+                <h5>Adapt &amp; Sustain</h5>
+                <p>We learn from experience, refine our approach, and support lasting impact well beyond the life of individual projects.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PARTNERSHIPS -->
+    <section class="partnerships" id="partnerships">
+      <div class="partnerships-wrapper">
+
+        <div class="partnerships-image" role="img" aria-label="Community training session"> <img src="/images/growing.jfif" alt="image-gowing-together"></div>
+
+        <div class="partnerships-text">
+          <span class="eyebrow">
+            <div class="eyebrow-dot"></div>
+            Partnerships
+          </span>
+          <div class="partnerships-text-content">
+             <h2>Working Together for Greater Impact</h2>
+            <p>We support individuals, community groups, civil society organizations and institutions through training, mentoring and technical support.</p>
+          </div>
+          <a href="#" class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ─── CTA BANNER ───────────────────────────────────────────────── -->
+  <!-- <section class="cta-banner"> -->
+    <!-- Background image — swap comment when ready -->
+    <!-- <img src="/images/cta-banner-bg.jpg" alt="" class="cta-banner-img" aria-hidden="true"> -->
+    <!-- <div class="cta-banner-img" aria-hidden="true"></div>
+    <div class="cta-banner-overlay" aria-hidden="true"></div> -->
+
+
+  <!-- </section> -->
+
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Let's Create Impact Together</h2>
+        <p>Whether you want to collaborate, strengthen your organization's capacity or support a community programme, let's explore what we can achieve together.</p>
+        <div class="cta-banner-actions">
+          <a href="#" class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+          <a href="#" class="btn btn--ghost btn--on-solid-bg">Explore Our Work</a>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="footer-inner">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <img src="/logo/Star sec brand-white.svg" alt="StarDIP" class="footer-logo">
+        <p>STAR — Development Impact Partners — connects capital, expertise and community to accelerate sustainable development</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="Facebook">
+            <i class="ph-bold ph-facebook-logo" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="X / Twitter">
+            <i class="ph-bold ph-x-logo" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+            <i class="ph-bold ph-linkedin-logo" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav columns -->
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-nav-col">
+          <h6>Explore</h6>
+          <a href="#">About</a>
+          <a href="#">Programs</a>
+          <a href="#">Impact</a>
+          <a href="#">Resources</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Get involve</h6>
+          <a href="#">Partner</a>
+          <a href="#">Volunteer</a>
+          <a href="#">Support</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Accountability</h6>
+          <a href="#">Privacy</a>
+          <a href="#">Governance</a>
+        </div>
+        <div class="footer-nav-col">
+          <h6>Contact</h6>
+          <a href="#">Email</a>
+          <a href="#">Phone number</a>
+        </div>
+      </nav>
+
+    </div>
+
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© 2026 STAR DEVELOPMENT IMPACT PARTNERS.</span>
+      <span>All Rights Reserved.</span>
+    </div>
+
+      <!-- Large watermark -->
+    <div class="footer-watermark" >
+      <img src="/images/footer-watermark.png" alt="watermark-stardip-logo">
+    </div>
+
+  </footer>
+
+
+  <script>
+    // ── Sticky nav scroll state ──────────────────────────────────────
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    // ── Mobile menu ──────────────────────────────────────────────────
+    const navToggle  = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      mobileMenu.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('nav-open', !isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+
+    // ── Scroll reveal ────────────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+
+    // ── Initiative carousel ──────────────────────────────────────────
+    const track        = document.getElementById('initiative-track');
+    const prevBtn      = document.getElementById('initiative-prev');
+    const nextBtn      = document.getElementById('initiative-next');
+    const titleEl      = document.getElementById('initiative-current-title');
+    const initiatives  = ['Pad Without Price', 'Agriculture & Sustainable Livelihood'];
+    let currentIdx     = 0;
+
+    function syncState(index) {
+      titleEl.textContent = initiatives[index] ?? initiatives[0];
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === track.querySelectorAll('.initiative-card').length - 1;
+    }
+
+    function goTo(index) {
+      const cards = track.querySelectorAll('.initiative-card');
+      if (!cards[index]) return;
+      currentIdx = index;
+      // getBoundingClientRect is accurate at any scroll position
+      const cardRect  = cards[index].getBoundingClientRect();
+      const trackRect = track.getBoundingClientRect();
+      track.scrollTo({ left: track.scrollLeft + (cardRect.left - trackRect.left), behavior: 'smooth' });
+      syncState(index);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(currentIdx - 1));
+    nextBtn.addEventListener('click', () => goTo(currentIdx + 1));
+
+    // Sync title + button state after a manual swipe settles
+    track.addEventListener('scrollend', () => {
+      const cards    = Array.from(track.querySelectorAll('.initiative-card'));
+      const trackMid = track.getBoundingClientRect().left + track.clientWidth / 2;
+      const closest  = cards.reduce((best, card) => {
+        const cx = card.getBoundingClientRect().left + card.offsetWidth / 2;
+        const bx = best.getBoundingClientRect().left + best.offsetWidth / 2;
+        return Math.abs(cx - trackMid) < Math.abs(bx - trackMid) ? card : best;
+      });
+      currentIdx = cards.indexOf(closest);
+      syncState(currentIdx);
+    });
+
+    syncState(0); // init button state
+  </script>
+</body>
+</html>
