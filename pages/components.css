@@ -7,9 +7,12 @@
 
 /* ── Local ease tokens ────────────────────────────────────────────── */
 :root {
-  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);    /* strong ease-out for UI */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);   /* strong ease-in-out for on-screen movement */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);    /* iOS-like drawer / sheet curve */
   color-scheme: light;
+  scrollbar-color: #83FD80 transparent;
+  scrollbar-width: none;
 }
 
 /* ── Base reset ───────────────────────────────────────────────────── */
@@ -24,6 +27,8 @@ html {
   color: var(--text);
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+  /* anchor jumps land below the fixed header */
+  scroll-padding-top: 72px;
   -webkit-text-size-adjust: 100%;
   overscroll-behavior: none;
 }
@@ -41,16 +46,53 @@ body {
    NAVIGATION
    ══════════════════════════════════════════════════════════════════ */
 .site-header {
-  flex-grow: 1;
-  width: min(100% - 2rem, 900px);
-  margin-inline: auto;
+  position: fixed;
+  inset-inline: 0;
+  z-index: 999;
+  background: transparent;
+}
+
+/* The solid background is a pseudo-element whose OPACITY is animated
+   (compositor-friendly) instead of animating background-color (paint). */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+/* Fallback (no scroll-driven animations): JS toggles .scrolled */
+.site-header.scrolled::before { opacity: 1; }
+
+/* Scroll-driven: header turns solid over the first 96px of scroll, whatever
+   the page length. */
+@supports (animation-timeline: scroll()) {
+  .site-header::before {
+    transition: none;
+    animation: switchBgHeader linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 96px;
+  }
+  .site-header.scrolled::before { opacity: 0; } /* the animation owns it */
+}
+
+@keyframes switchBgHeader {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .nav {
+  flex-grow: 1;
+  width: min(100% - 2rem, 900px);
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   gap: var(--space-3);
-  padding-block: var(--space-4);
+  padding-block: var(--space-2);
 }
 
 .nav-links-and-logo {
@@ -60,19 +102,32 @@ body {
   gap: var(--space-8);
 }
 
+.brand {
+  width: fit-content;
+  height: 32px;
+  overflow: hidden;
+  position: relative;
+
+}
 .brand img {
   width: auto;
   height: 32px;
+  overflow: hidden;
+}
+.brand-white {
+  display: flex;
+}
+.brand-blue {
+  display: none;
 }
 
 .nav-links {
   display: flex;
   width: fit-content;
-  background: rgb(from var(--surface) r g b / 0.09);
+  background: rgb(from var(--surface) r g b / 0.1);
   padding: var(--space-1);
   border-radius: var(--radius-full);
   gap: var(--space-1);
-  background: hsla(0, 0%, 100%, 0.05);
   border: 1px solid hsla(0, 0%, 100%, 0.05);
 }
 
@@ -89,12 +144,10 @@ body {
   font-weight: var(--label-medium-font-weight);
   line-height: var(--label-medium-line-height);
   color: var(--on-accent);
+  /* hover / colour change → plain `ease`, kept short (nav is used constantly) */
   transition:
-    background 200ms var(--ease-out),
-    color      200ms var(--ease-out),
-    transform  200ms var(--ease-out);
-  transform-origin: center bottom;
-  will-change: transform;
+    background 150ms ease,
+    color      150ms ease;
 }
 
 .nav-item.active {
@@ -103,18 +156,17 @@ body {
   color: var(--text);
 }
 
-.nav-item:hover.active {
-  background: var(--surface);
-  background-color: #83FD80;
-  font-weight: var(--label-semibold-font-weight);
-  color: var(--text);
-}
-
 @media (hover: hover) and (pointer: fine) {
+  .nav-item:hover.active {
+    background: var(--surface);
+    background-color: #83FD80;
+    font-weight: var(--label-semibold-font-weight);
+    color: var(--text);
+  }
+
   .nav-item:not(.active):hover {
     color: var(--text-white);
     color: #83FD80;
-    transform: translateY(-1px);
   }
 }
 
@@ -123,11 +175,11 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(from var(--surface) r g b / 0.1);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
   border-radius: var(--radius-sm);
   cursor: pointer;
   color: var(--on-accent);
@@ -138,12 +190,46 @@ body {
     transform  180ms var(--ease-out);
 }
 
+/* Follows the header: an accent layer fades in over the translucent button
+   once the page is scrolled (opacity only, no background animation). */
+.nav-hamburger {
+  position: relative;
+  isolation: isolate;
+}
+.nav-hamburger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+.site-header.scrolled .nav-hamburger::before { opacity: 1; }
+
+@supports (animation-timeline: scroll()) {
+  .nav-hamburger::before {
+    transition: none;
+    animation: switchMenuBg linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 96px;
+  }
+  .site-header.scrolled .nav-hamburger::before { opacity: 0; }
+}
+
+@keyframes switchMenuBg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .nav-hamburger:focus-visible {
   outline: 2px solid transparent;
   box-shadow: var(--focus-ring);
 }
 
-.nav-hamburger:active { transform: scale(0.94); }
+.nav-hamburger:active { transform: scale(0.96); }
 
 .nav-hamburger__icon--open,
 .nav-hamburger__icon--close {
@@ -168,12 +254,59 @@ body {
   transform: rotate(0deg) scale(1);
 }
 
+/* ── Light header variant ─────────────────────────────────────────────
+   For pages with a light background (e.g. contact form): the header stays
+   transparent at every scroll position (no solid-on-scroll layer), the nav
+   pill is white and the labels use --text-muted.
+   Usage: <header class="site-header site-header--light"> */
+.site-header--light::before,
+.site-header--light .nav-hamburger::before {
+  display: none; /* no scroll-driven background, no fallback fade */
+}
+
+.site-header--light .nav-links {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.site-header--light .nav-item {
+  color: var(--text-muted);
+}
+
+/* current page: sunken chip inside the white pill (white-on-white would vanish) */
+.site-header--light .nav-item.active {
+  background: var(--paper-sunken);
+  color: var(--text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-header--light .nav-item:not(.active):hover {
+    color: var(--text);
+  }
+  .site-header--light .nav-item:hover.active {
+    background: var(--paper-sunken);
+    color: var(--text);
+  }
+}
+
+/* mobile hamburger: white chip, muted icon */
+.site-header--light .nav-hamburger {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
 /* ── Mobile drawer ────────────────────────────────────────────────── */
 .nav-mobile-menu {
-  position: absolute;
-  width: 80%;
+  /* fixed (not absolute) so it stays attached to the fixed header,
+     whatever the scroll position or positioned ancestor */
+  position: fixed;
+  width: 100%;
+  top: 64px;
   right: 0;
-  min-height: min(100dvh - 0px);
+  height: calc(100dvh - 64px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -181,18 +314,23 @@ body {
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
+  /* hidden menu must not be reachable by Tab / screen readers */
+  visibility: hidden;
   align-items: center;
+  box-shadow: var(--shadow-sm);
   transition:
-    opacity   280ms var(--ease-out),
-    transform 280ms var(--ease-out);
-    box-shadow: var(--shadow-sm);
+    opacity    280ms var(--ease-out),
+    transform  280ms var(--ease-out),
+    visibility 0s linear 280ms;
 }
 
 .nav-mobile-menu.open {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  z-index: 999;
+  visibility: visible;
+  z-index: 99999;
+  transition-delay: 0s;
 }
 
 .nav-mobile-link {
@@ -208,12 +346,6 @@ body {
   text-align: center;
   transition: background 150ms, color 150ms;
 }
-
-/* .nav-mobile-link.active {
-  color: var(--accent);
-  font-weight: var(--label-semibold-font-weight);
-  background: var(--surface-selected);
-} */
 
 .nav-mobile-link:not(.active):active {
   background: var(--surface-hover);
@@ -287,7 +419,7 @@ body.nav-open { overflow: hidden; }
 .cta-banner-content {
   position: relative;
   z-index: 1;
-  width: min(100% - 3rem, 700px);
+  width: min(100% - 3rem, 780px);
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -391,12 +523,15 @@ body.nav-open { overflow: hidden; }
   color: var(--on-accent);
   font-size: 1rem;
   text-decoration: none;
-  transition: background 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .footer-social-btn:hover {
     background: rgba(255, 255, 255, 0.22);
+    color: #83FD80;
   }
 }
 
@@ -444,10 +579,6 @@ body.nav-open { overflow: hidden; }
   justify-content: center;
 }
 .footer-watermark img{
-  /* background: url(/images/footer-watermark.png); */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: c; */
   width: calc(80% - 0px);
 }
 
@@ -473,6 +604,415 @@ body.nav-open { overflow: hidden; }
   text-transform: uppercase;
   text-align: start;
 }
+
+
+/* Modal sheet — a <dialog class="modal-sheet"> opened with showModal().
+   Bottom sheet on mobile, centred panel on larger screens. */
+.modal-sheet {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.modal-sheet[open] {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Enter AND exit: `display`/`overlay` with allow-discrete keep the dialog
+   rendered (and in the top layer) until the closing transition has finished. */
+.modal-sheet {
+  transition:
+    display 280ms allow-discrete,
+    overlay 280ms allow-discrete;
+}
+
+/* backdrop fades via OPACITY (not background-color) */
+.modal-sheet::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition:
+    opacity 280ms var(--ease-out),
+    display 280ms allow-discrete,
+    overlay 280ms allow-discrete;
+}
+
+.modal-sheet[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .modal-sheet[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+.modal-sheet__panel {
+  position: relative;
+  width: min(100%, 620px);
+  max-height: 84dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
+  color: var(--text);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+
+/* Closed state = where it came from: slides back down the way it entered. */
+.modal-sheet__panel {
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 280ms var(--ease-drawer),
+    opacity 200ms var(--ease-out);
+}
+
+.modal-sheet[open] .modal-sheet__panel {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@starting-style {
+  .modal-sheet[open] .modal-sheet__panel {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.modal-sheet__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--paper-sunken);
+  color: var(--text);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-sheet__close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Per-card modal content lives in the card, hidden until copied into the sheet */
+.focus-card-modal { display: none; }
+
+.modal-sheet__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.modal-sheet__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.modal-sheet-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.modal-sheet-header h2 {
+  font-family: var(--heading-4-font-family);
+  font-size: var(--heading-4-font-size);
+  font-weight: var(--heading-4-font-weight);
+  line-height: var(--heading-4-line-height);
+  letter-spacing: var(--heading-4-letter-spacing);
+  color: var(--text);
+  text-wrap: balance;
+  padding-inline-end: var(--space-8);
+}
+
+.modal-sheet-header .modal-sheet__lead {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.modal-sheet__text p {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text-muted);
+}
+
+.modal-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.modal-content-section h4 {
+  font-family: var(--body-large-medium-font-family);
+  font-size: var(--body-large-medium-font-size);
+  font-weight: var(--body-large-bold-font-weight);
+  line-height: var(--body-large-medium-line-height);
+  letter-spacing: var(--body-large-medium-letter-spacing);
+  color: var(--text);
+}
+
+.modal-content-section ul {
+  list-style: disc;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.modal-content-section ul li {
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text-muted);
+}
+.modal-content-section ul {
+  list-style: disc;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.focus-button-wrapper {
+  display: inline-flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+
+@media (min-width: 769px) {
+  .modal-sheet[open] { align-items: center; }
+  .modal-sheet__panel {
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    /* centred panel: a short rise instead of a full-height slide */
+    transform: translateY(24px);
+  }
+  @starting-style {
+    .modal-sheet[open] .modal-sheet__panel { transform: translateY(24px); }
+  }
+}
+
+/* Reduced motion: keep the fades, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  .modal-sheet__panel,
+  .modal-sheet[open] .modal-sheet__panel { transform: none; }
+  @starting-style {
+    .modal-sheet[open] .modal-sheet__panel { transform: none; }
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   REDUCED MOTION — shared chrome (fewer / gentler, not zero)
+   ══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .nav-hamburger:active { transform: none; }
+
+  /* icon swap becomes a plain crossfade (no spin) */
+  .nav-hamburger__icon--open,
+  .nav-hamburger__icon--close,
+  .nav-hamburger[aria-expanded="true"] .nav-hamburger__icon--open,
+  .nav-hamburger[aria-expanded="true"] .nav-hamburger__icon--close {
+    transform: none;
+  }
+
+  /* menu fades, no slide */
+  .nav-mobile-menu { transform: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCROLL REVEAL — `.reveal` is added by JS, `.visible` when in view.
+   --reveal-delay is set per element by the observer to stagger a batch.
+   ══════════════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  /* delay lives inside the shorthand so elements that add their own
+     transitions (hover etc.) don't inherit a reveal delay */
+  transition:
+    opacity 500ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 500ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+/* Images: a little scale-up instead of a rise */
+.reveal--scale {
+  transform: scale(0.97);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--scale { transform: none; transition: opacity 200ms ease; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FORM — card with labelled fields (two columns on desktop)
+   Markup:
+   <form class="form">
+     <h2 class="form__title">…</h2>
+     <div class="form__grid">
+       <div class="form__fields">
+         <div class="form-field">
+           <label class="form-label" for="id">Label</label>
+           <input class="form-control" id="id" …>
+         </div>
+       </div>
+       <div class="form-field form-field--fill"> … <textarea class="form-control form-control--textarea"> </div>
+     </div>
+     <button class="btn btn--primary btn--lg form__submit">…</button>
+   </form>
+   ══════════════════════════════════════════════════════════════════ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5);
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+}
+
+.form__title {
+  font-family: var(--heading-3-font-family);
+  font-size: var(--heading-3-font-size);
+  font-weight: var(--heading-3-font-weight);
+  line-height: var(--heading-3-line-height);
+  letter-spacing: var(--heading-3-letter-spacing);
+  color: var(--text);
+}
+
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* the message field stretches to the height of the left column */
+.form-field--fill .form-control--textarea {
+  flex: 1;
+}
+
+.form-label {
+  font-family: var(--body-medium-medium-font-family);
+  font-size: var(--body-medium-medium-font-size);
+  font-weight: var(--body-medium-medium-font-weight);
+  line-height: var(--body-medium-medium-line-height);
+  letter-spacing: var(--body-medium-medium-letter-spacing);
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  min-height: 2.125rem;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font-family: var(--body-medium-regular-font-family);
+  font-size: var(--body-medium-regular-font-size);
+  font-weight: var(--body-medium-regular-font-weight);
+  line-height: var(--body-medium-regular-line-height);
+  letter-spacing: var(--body-medium-regular-letter-spacing);
+  color: var(--text);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.form-control::placeholder {
+  color: var(--text-subtle);
+  opacity: 0.75;
+}
+
+/* @media (hover: hover) and (pointer: fine) {
+  .form-control:not(:focus):hover {
+    border-color: var(--border-strong);
+  }
+} */
+
+.form-control:focus-visible {
+  outline: 2px solid transparent;
+  border-color: var(--text-subtle);
+  box-shadow: var(--accent);
+}
+
+/* only after the user has interacted (not on a fresh, empty form) */
+.form-control:user-invalid {
+  border-color: var(--danger);
+}
+
+.form-control--textarea {
+  min-height: 9rem;
+  resize: none;
+}
+
+.form__submit {
+  width: calc(50% - var(--space-5) / 2); /* same width as the left column */
+}
+
+@media (max-width: 768px) {
+  .form { padding: var(--space-5) var(--space-4); }
+  .form__grid { grid-template-columns: 1fr; }
+  .form-control--textarea { min-height: 10rem; }
+  .form__submit { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-control { transition: none; }
+}
+
 
 /* ══════════════════════════════════════════════════════════════════
    RESPONSIVE — shared
@@ -503,7 +1043,7 @@ body.nav-open { overflow: hidden; }
   }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 540px) {
   .footer-nav {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
@@ -512,15 +1052,19 @@ body.nav-open { overflow: hidden; }
   .cta-banner-content h2 {
     width: 100%;
     text-align: start;
+    text-wrap: balance;
   }
+
   .cta-banner-content p {
     width: 100%;
     text-align: start;
   }
 
   .cta-banner-actions {
+    width: 100%;
     display: inline-flex;
     flex-wrap: wrap;
+    align-content: start;
     gap: var(--space-4);
   }
 }

@@ -25,6 +25,7 @@
   padding-block: var(--space-8);
   display: flex;
   justify-content: center;
+  padding-block-start: var(--space-10);
 }
 
 .about-hero-content {
@@ -33,9 +34,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  align-content: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  margin-block-start: var(--space-6);
 }
 
 .about-hero-content-text{
@@ -483,9 +485,9 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  justify-content: end;
-  max-height: 480px;
+  height: 372px;
 
   gap: var(--space-4);
 }
@@ -502,17 +504,23 @@
 
 /* Text block inside each card */
 .pillar-card-text {
+  height: 100%;
   padding: var(--space-4);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: var(--space-10);
-  height: 100%;
+  gap: var(--space-3);
 }
 
+.pillar-card-text-content {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: end;
+}
 .pilar-card-text-body{
   display: flex;
   flex-direction: column;
+  justify-content: end;
   gap: var(--space-3);
   margin-block-end: var(--space-6);
 }
@@ -559,23 +567,6 @@
 }
 
 /* Image fills remaining card height */
-.pillar-card-image {
-  /* flex: 1; */
-  flex-grow:  1;
-  /* min-height: 200px; */
-  /* aspect-ratio: 12 / 9; */
-  background: rgba(0, 0, 0, 0.15);
-  object-fit: cover;
-  width: 100%;
-  /* inner rounded corners where image meets card edge */
-  /* margin-inline: var(--space-3); */
-  /* width: calc(100% - var(--space-3) * 2); */
-  border-radius: var(--radius-xl);
-  /* margin-block-end: var(--space-3); */
-  background-color: red;
-  opacity: 0.2;
-  display: none;
-}
 
 
 /* Accountability: image at top, so push margin to top */
@@ -589,10 +580,6 @@
    RESPONSIVE — about page
    ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .about-hero-content {
-    margin-block: 56px;
-  }
-
   .about-hero-content-text > p {
     max-width: min(100% - 48px);
   }
@@ -602,45 +589,46 @@
     justify-content: center;
   }
 
-
-  .about-bento-row {
-    flex-direction: column;
-  }
-
   .bento-purpose {
     flex-direction: column;
   }
 
   .bento-purpose-image {
     flex: 0 0 auto;
-    min-height: 200px;
+    height: 200px;
     width: 100%;
   }
 
   .about-values-container{
-  width: min(100% - 3rem, 1120px);
-  padding: var(--space-4);
-  gap: var(--space-4);
+    width: min(100% - 2rem, 900px);
+    padding: var(--space-4);
+    gap: var(--space-7);
   }
 
   .about-values-wrapper {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
+    gap: var(--space-5);
   }
 
   .about-values-left {
     position: static;
   }
 
-  .about-pillars-wrapper {
-    grid-template-columns: 1fr;
+  .about-values-img {
+    width: 100%;
+    aspect-ratio: 5 / 2.5;
   }
+
+  .about-pillars-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  
 
   .about-values-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
-    .our-focus-text-content-btn {
+  .our-focus-text-content-btn {
     flex-direction: column;
     align-items: start;
     flex-wrap: nowrap;
@@ -663,7 +651,7 @@
   }
 
   .focus-cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
   }
 
@@ -671,7 +659,6 @@
     flex-wrap: wrap;
     gap: var(--space-4);
   }
-
 
   .card-text { min-width: 100%; }
 
@@ -683,7 +670,7 @@
 
 }
 
-@media (max-width: 440px) {
+@media (max-width: 540px) {
   .about-hero-content-text > p {
     max-width: min(100% - 0px);
   }
@@ -694,8 +681,14 @@
     flex-direction: column;
     gap: var(--space-5);
     align-items: start;
+    justify-content: start;
     text-align: start;
   }
+
+  .about-hero-content h1{
+    width: 100%;
+  }
+
   .about-hero-actions {
     width: 100%;
     flex-direction: column;
@@ -707,11 +700,28 @@
     width: fit-content;
   }
 
+  .about-bento-row {
+    flex-direction: column;
+  }
+
   .our-focus-text-wrapper {
     display: flex;
     justify-content: space-between;
     gap: var(--space-1);
     flex-direction: column;
     width: 100%;
+  }
+
+  .focus-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-pillars-wrapper {
+    grid-template-columns: 1fr;
   }
 }

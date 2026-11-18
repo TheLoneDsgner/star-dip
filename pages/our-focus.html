@@ -1,16 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
-    <meta name="description" content="About Star Development Impact Partners — who we are, our mission and the team behind the work." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta
+      name="description"
+      content="About Star Development Impact Partners — who we are, our mission and the team behind the work."
+    />
     <meta name="theme-color" content="#edf2ff" />
     <title>Our Area of Fcous — StarDIP</title>
 
-      <!-- Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Petrona:wght@600&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petrona:wght@600&family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -21,290 +30,1091 @@
     <link rel="stylesheet" href="components.css" />
     <!-- Page styles -->
     <link rel="stylesheet" href="about.css" />
-    <link rel="stylesheet" href="our-focus.css">
+    <link rel="stylesheet" href="our-focus.css" />
     <!-- Button component -->
     <link rel="stylesheet" href="button.css" />
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="our-focus-top">
-        <header class="site-header" id="site-header">
-            <nav class="nav" aria-label="Main">
-                <div class="nav-links-and-logo">
-                  <a href="index.html" class="brand">
-                    <img src="/logo/star-secondary-brand-mix.svg" alt="StarDIP logo">
-                  </a>
-                  <div class="nav-links">
-                    <a href="index.html" class="nav-item">Home</a>
-                    <a href="about.html" aria-current="page" class="nav-item">About</a>
-                    <a href="index.html#what-we-do" class="nav-item">What we do</a>
-                    <a href="index.html" class="nav-item">Impact</a>
-                  </div>
-                </div>
-                <button class="btn btn--secondary nav-cta">Partner With Us</button>
-
-                <!-- Hamburger — mobile only -->
-                <button
-                  class="nav-hamburger"
-                  id="nav-toggle"
-                  aria-expanded="false"
-                  aria-controls="nav-mobile-menu"
-                  aria-label="Open menu"
-                >
-                  <i class="ph-bold ph-list nav-hamburger__icon--open" aria-hidden="true"></i>
-                  <i class="ph-bold ph-x   nav-hamburger__icon--close" aria-hidden="true"></i>
-                </button>
-            </nav>
-        </header>
-
-        <!-- Mobile menu drawer -->
-        <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
-          <a href="index.html" class="nav-mobile-link">Home</a>
-          <a href="about.html" class="nav-mobile-link active">About</a>
-          <a href="index.html#what-we-do" class="nav-mobile-link">What we do</a>
-          <a href="index.html" class="nav-mobile-link">Impact</a>
-          <a href="#cta" class="btn btn--secondary nav-mobile-cta">Partner With Us</a>
-        </div>
-
-        <!-- Focus hero -->
-         <div class="our-focus-hero">
-            <div class="our-focus-hero-content">
-                <div class="focus-eyebrow-wrapper">
-                    <a href="index.html" class="eyebrow eyebrow--back"><i class="ph ph-arrow-left"></i></a>
-                    <span class="eyebrow eyebrow--light"> <div class="eyebrow-dot"></div> Our areas of focus</span>
-                </div>
-                
-                <div class="our-focus-hero-content-text">
-                    <h1>Connected Priorities. Shared Progress.</h1>
-                    <p>We address interconnected challenges through programmes that empower people and strengthen communities.</p>
-                </div>
+      <header class="site-header" id="site-header">
+        <nav class="nav" aria-label="Main">
+          <div class="nav-links-and-logo">
+            <a href="index.html" class="brand">
+              <img
+                src="/logo/star-secondary-brand-mix.svg"
+                alt="StarDIP logo"
+              />
+            </a>
+            <div class="nav-links">
+              <a href="index.html" class="nav-item">Home</a>
+              <a href="about.html" class="nav-item">About</a>
+              <a href="index.html#what-we-do" class="nav-item">What we do</a>
+              <a
+                href="our-focus.html"
+                aria-current="page"
+                class="nav-item active"
+                >Our areas of focus</a
+              >
             </div>
-         </div>
+          </div>
+          <a href="contact-form.html" class="btn btn--secondary nav-cta"
+            >Partner With Us</a
+          >
+
+          <!-- Hamburger — mobile only -->
+          <button
+            class="nav-hamburger"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-mobile-menu"
+            aria-label="Open menu"
+          >
+            <i
+              class="ph-bold ph-list nav-hamburger__icon--open"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="ph-bold ph-x nav-hamburger__icon--close"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </nav>
+      </header>
+
+      <!-- Mobile menu drawer -->
+      <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+        <a href="index.html" class="nav-mobile-link">Home</a>
+        <a href="about.html" class="nav-mobile-link">About</a>
+        <a href="index.html#what-we-do" class="nav-mobile-link">What we do</a>
+        <a href="our-focus.html" class="nav-mobile-link active"
+          >Our areas of focus</a
+        >
+        <a href="#cta" class="btn btn--secondary nav-mobile-cta"
+          >Partner With Us</a
+        >
+      </div>
+
+      <!-- Focus hero -->
+      <div class="our-focus-hero">
+        <div class="our-focus-hero-content">
+          <div class="focus-eyebrow-wrapper">
+            <a href="index.html" class="eyebrow eyebrow--back"
+              ><i class="ph ph-arrow-left"></i
+            ></a>
+            <span class="eyebrow eyebrow--light">
+              <div class="eyebrow-dot"></div>
+              Our areas of focus</span
+            >
+          </div>
+
+          <div class="our-focus-hero-content-text">
+            <h1>Connected Priorities. Shared Progress.</h1>
+            <p>
+              We address interconnected challenges through programmes that
+              empower people and strengthen communities.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <main class="our-focus-main">
-        <section class="our-focus" id="our-focus">
+      <section class="our-focus" id="our-focus">
+        <div class="our-focus-header">
+          <h2>Connecting People, <span>Systems and Solutions</span></h2>
+        </div>
 
-          <div class="our-focus-header">
-            <h2>Connecting People, <span>Systems and Solutions</span></h2>
-            <!-- <p>We work across interconnected areas of development, recognizing that healthier people, stronger livelihoods and resilient environments are essential to thriving communities.</p> -->
-          </div>             
-
-            <div class="focus-cards-wrapper">
-                <div class="focus-card">
-                    <span>1</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>One Health</h5>
-                            <p>Healthy People. Healthy Animals. Healthy Environments.</p>
-                        </div>
-                        <!-- <a href="#" class="btn btn--ghost">Learn More</a> -->
-                    </div>
-                </div>
-
-                <div class="focus-card focus--image">
-                    <img src="/images/wel-being.jfif" alt="">
-                </div>    
-
-                <div class="focus-card">
-                    <span>2</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Health & Community Well-being</h5>
-                            <p>Promoting health awareness, prevention and access to appropriate community health services.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>3</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Pad Without Price</h5>
-                            <p>Because Dignity Should Never Have a Price.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>4</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Agriculture & Sustainable Livelihood</h5>
-                            <p>Growing Food. Strengthening Livelihoods. Building Resilience.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>5</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Youth Development & Empowerment</h5>
-                            <p>Equipping Young People for Opportunity.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>6</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Women, Girls & Youth</h5>
-                            <p>Advancing dignity, inclusion, and opportunity.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>7</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Climate & Environment</h5>
-                            <p>Promoting environmental sustainability and community resilience.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="focus-card">
-                    <span>8</span>
-                    <div class="focus-card-text">
-                        <div class="focus-card-text-container">
-                            <h5>Capacity Building</h5>
-                            <p>Strengthening skills, knowledge, and institutional capacity.</p>
-                        </div>
-                    </div>
-                </div>            
-            </div>
-        </section>
-
-            <!-- PARTNERSHIPS -->
-        <section class="partnerships" id="partnerships">
-          <div class="partnerships-wrapper">
-
-            <div class="partnerships-image" role="img" aria-label="Community training session"> <img src="/images/growing.jfif" alt="image-gowing-together"></div>
-
-            <div class="partnerships-text">
-              <span class="eyebrow">
-                <div class="eyebrow-dot"></div>
-            Partnerships
-              </span>
-              <div class="partnerships-text-content">
-                <h2>Working Together for Greater Impact</h2>
-                <p>We support individuals, community groups, civil society organizations and institutions through training, mentoring and technical support.</p>
+        <div class="focus-cards-wrapper">
+          <!-- focus-one-health -->
+          <div class="focus-card">
+            <span>1</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>One Health</h5>
+                <p>Healthy People. Healthy Animals. Healthy Environments.</p>
               </div>
-              <a href="#" class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></a>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- one health modal -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>One Health</h2>
+                  <p class="modal-sheet__lead">
+                    Healthy People. Healthy Animals. Healthy Environments.
+                  </p>
+                </div>
+
+                <p>
+                  The health of people, animals, plants, and the environment is
+                  closely connected. StarDIP promotes an integrated approach to
+                  community well-being by bringing these areas together through
+                  awareness, prevention, and cross-sector collaboration.
+                </p>
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We support community-level actions that help prevent shared
+                    health risks and promote healthier environments.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Community One Health awareness and education.</li>
+                    <li>
+                      Prevention of diseases that spread between animals and
+                      humans.
+                    </li>
+                    <li>Animal and livestock health awareness.</li>
+                    <li>Food safety and environmental health education.</li>
+                    <li>Water, sanitation, and hygiene promotion.</li>
+                    <li>Climate and health awareness.</li>
+                    <li>Antimicrobial resistance awareness.</li>
+                    <li>
+                      Collaboration among health, agriculture, and environmental
+                      stakeholders.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Health challenges do not exist in isolation. Issues
+                    affecting animals, food systems, water, and the environment
+                    can also affect human health and community livelihoods.
+                    Addressing these connections helps communities become better
+                    informed and prepared.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>One gealth goal</h4>
+                  <p>
+                    To strengthen community awareness, encourage preventive
+                    practices, and support collaboration towards healthier
+                    people, animals, and environments.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us
+                </a>
+              </div>
             </div>
           </div>
-        </section>
+
+          <div class="focus-card focus--image">
+            <img src="/images/wel-being.jfif" alt="" />
+          </div>
+
+          <!-- focus health and community -->
+          <div class="focus-card">
+            <span>2</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Health & Community Well-being</h5>
+                <p>
+                  Promoting health awareness, prevention and access to
+                  appropriate community health services.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content health and community -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Health &amp; Community Well-being</h2>
+                  <p class="modal-sheet__lead">
+                    Healthier Communities, Better Quality of Life.
+                  </p>
+                </div>
+
+                <p>
+                  We support initiatives that improve access to health
+                  information, preventive services, and community-based health
+                  interventions, particularly for underserved populations.
+                </p>
+
+                <p>
+                  Our work focuses on strengthening health awareness, promoting
+                  healthy behaviours, and connecting individuals and communities
+                  to appropriate health services.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We support efforts that promote preventive healthcare and
+                    improve community access to essential health information.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Primary healthcare awareness.</li>
+                    <li>Community health education.</li>
+                    <li>Disease prevention and health promotion.</li>
+                    <li>Health screening and referrals.</li>
+                    <li>Maternal and child health awareness.</li>
+                    <li>Adolescent health education.</li>
+                    <li>Nutrition and healthy living.</li>
+                    <li>Water, sanitation, and hygiene (WASH).</li>
+                    <li>Community health workforce development.</li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Access to reliable health information and preventive
+                    services helps people make informed decisions about their
+                    well-being. Stronger community health awareness also
+                    supports early action and better connections to appropriate
+                    healthcare.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To contribute to healthier communities by promoting
+                    awareness, prevention, and improved access to essential
+                    health information and services.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- focus pad without price -->
+          <div class="focus-card">
+            <span>3</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Pad Without Price</h5>
+                <p>Because Dignity Should Never Have a Price.</p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal pad without price -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Pad Without Price</h2>
+                  <p class="modal-sheet__lead">
+                    Because Dignity Should Never Have a Price.
+                  </p>
+                </div>
+
+                <p>
+                  Pad Without Price is a StarDIP initiative focused on improving
+                  access to menstrual products and menstrual health education
+                  for girls and young women.
+                </p>
+
+                <p>
+                  We believe every girl deserves to manage her period safely,
+                  confidently, and with dignity. Our work combines access to
+                  essential menstrual products with education that challenges
+                  stigma and promotes informed menstrual health practices.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We go beyond product distribution to promote knowledge,
+                    confidence, and supportive environments for menstrual
+                    health.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Distribution of free menstrual pads.</li>
+                    <li>Menstrual health and hygiene education.</li>
+                    <li>Puberty education for girls.</li>
+                    <li>
+                      Addressing stigma and misconceptions around menstruation.
+                    </li>
+                    <li>School and community outreach.</li>
+                    <li>Education for parents and caregivers.</li>
+                    <li>Engagement with teachers and community leaders.</li>
+                    <li>
+                      Referrals to appropriate health services where necessary.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Limited access to menstrual products and accurate
+                    information can affect girls' confidence, well-being, and
+                    participation in everyday activities, including education.
+                    Creating supportive environments helps girls manage
+                    menstruation without unnecessary barriers.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To help girls and young women access menstrual products and
+                    reliable information so they can manage their periods with
+                    confidence and dignity.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Support Pad Without Price
+                </a>
+                <!-- <a href="#partnerships" class="btn btn--secondary"
+                  >Partner With Us
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- focus agriculture -->
+          <div class="focus-card">
+            <span>4</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Agriculture & Sustainable Livelihood</h5>
+                <p>
+                  Growing Food. Strengthening Livelihoods. Building Resilience.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content agriculture -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Agriculture &amp; Sustainable Livelihood</h2>
+                  <p class="modal-sheet__lead">
+                    Growing Food. Strengthening Livelihoods. Building
+                    Resilience.
+                  </p>
+                </div>
+
+                <p>
+                  Agriculture plays an important role in food security, economic
+                  opportunity, and community resilience. StarDIP supports
+                  sustainable and climate-smart agricultural practices that help
+                  farmers improve productivity, strengthen livelihoods, and
+                  build more resilient food systems.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We promote practical agricultural knowledge, stronger
+                    farming systems, and opportunities for sustainable
+                    livelihoods.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Farmer training and agricultural extension support.</li>
+                    <li>Climate-smart and sustainable farming practices.</li>
+                    <li>Smallholder farmer development.</li>
+                    <li>Women and youth participation in agriculture.</li>
+                    <li>Agribusiness and agricultural entrepreneurship.</li>
+                    <li>Agricultural value-chain strengthening.</li>
+                    <li>Food security initiatives.</li>
+                    <li>Market access and linkages.</li>
+                    <li>Post-harvest management.</li>
+                    <li>Livelihood diversification.</li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Farmers and agricultural communities face challenges that
+                    affect productivity, income, and food availability. Access
+                    to practical knowledge, resources, and stronger market
+                    opportunities can help address these challenges.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To support productive and resilient agricultural livelihoods
+                    while contributing to food security and sustainable
+                    community development.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- focus youth and development -->
+          <div class="focus-card">
+            <span>5</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Youth Development & Empowerment</h5>
+                <p>Equipping Young People for Opportunity.</p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content youth and development -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Youth Development &amp; Empowerment</h2>
+                  <p class="modal-sheet__lead">
+                    Equipping Young People for Opportunity.
+                  </p>
+                </div>
+
+                <p>
+                  Young people are important drivers of innovation, leadership,
+                  and community development. StarDIP supports initiatives that
+                  equip young people with the knowledge, skills, and
+                  opportunities to participate meaningfully in society and build
+                  productive futures.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We promote personal development, employability,
+                    entrepreneurship, and youth participation.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Life skills development.</li>
+                    <li>Employability and career readiness.</li>
+                    <li>Entrepreneurship and business development.</li>
+                    <li>Digital skills and technology awareness.</li>
+                    <li>Leadership development.</li>
+                    <li>Mentorship and career guidance.</li>
+                    <li>Youth health education.</li>
+                    <li>Community participation and volunteering.</li>
+                    <li>Innovation and skills development programmes.</li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Many young people face barriers to accessing relevant
+                    skills, mentorship, and economic opportunities. Creating
+                    pathways for learning and participation can help them unlock
+                    their potential and contribute meaningfully to their
+                    communities.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To empower young people with the skills, confidence, and
+                    opportunities to shape their futures and contribute to
+                    sustainable development.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- focus womane, girls and youth -->
+          <div class="focus-card">
+            <span>6</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Women, Girls & Youth</h5>
+                <p>Advancing dignity, inclusion, and opportunity.</p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content women, girls and youth -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Women, Girls &amp; Youth</h2>
+                  <p class="modal-sheet__lead">
+                    Creating Opportunities. Advancing Dignity. Strengthening
+                    Voices.
+                  </p>
+                </div>
+
+                <p>
+                  We support initiatives that improve access to information,
+                  healthcare, livelihoods, and opportunities for women, girls,
+                  and young people.
+                </p>
+
+                <p>
+                  Our work promotes inclusion, dignity, and meaningful
+                  participation, helping individuals overcome barriers and play
+                  active roles in their communities.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We support initiatives that strengthen well-being,
+                    independence, and equal opportunities.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Women's and girls' health awareness.</li>
+                    <li>Menstrual health and hygiene.</li>
+                    <li>Girls' education and empowerment.</li>
+                    <li>Economic empowerment and entrepreneurship.</li>
+                    <li>Leadership and personal development.</li>
+                    <li>Access to information and essential services.</li>
+                    <li>Gender-based violence prevention and referral.</li>
+                    <li>Community participation and advocacy.</li>
+                    <li>Opportunities for women and youth-led initiatives.</li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Social and economic barriers can limit access to education,
+                    healthcare, leadership, and livelihood opportunities.
+                    Supporting women, girls, and young people helps create more
+                    inclusive communities where everyone has the opportunity to
+                    thrive.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To advance dignity, inclusion, and opportunity for women,
+                    girls, and young people through initiatives that strengthen
+                    their well-being, voices, and participation.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- focus Climate and Environment -->
+          <div class="focus-card">
+            <span>7</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Climate & Environment</h5>
+                <p>
+                  Promoting environmental sustainability and community
+                  resilience.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content climate & environment -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Climate &amp; Environment</h2>
+                  <p class="modal-sheet__lead">
+                    Promoting environmental sustainability and community
+                    resilience.
+                  </p>
+                </div>
+
+                <p>
+                  A healthy environment is essential to community well-being,
+                  livelihoods, and sustainable development. StarDIP promotes
+                  environmental awareness and sustainable practices that
+                  encourage communities to understand, respond to, and reduce
+                  environmental challenges.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We encourage responsible environmental practices and
+                    community participation in building a more sustainable
+                    future.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Environmental awareness and education.</li>
+                    <li>Climate change awareness.</li>
+                    <li>Community-led environmental initiatives.</li>
+                    <li>Sustainable natural resource management.</li>
+                    <li>Waste management and responsible disposal.</li>
+                    <li>Environmental health promotion.</li>
+                    <li>Climate-smart agricultural practices.</li>
+                    <li>Community resilience and adaptation.</li>
+                    <li>
+                      Stakeholder collaboration on environmental sustainability.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Environmental challenges can affect public health, food
+                    systems, livelihoods, and the resources communities depend
+                    on. Building awareness and encouraging sustainable practices
+                    are important steps towards reducing these risks.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To support environmentally responsible communities that are
+                    better equipped to adapt to environmental challenges and
+                    protect the resources they depend on.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <a href="contact-form.html" class="btn btn--primary"
+                  >Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- focus capacity building -->
+          <div class="focus-card">
+            <span>8</span>
+            <div class="focus-card-text">
+              <div class="focus-card-text-container">
+                <h5>Capacity Building</h5>
+                <p>
+                  Strengthening skills, knowledge, and institutional capacity.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                data-modal-open
+                aria-haspopup="dialog"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <!-- Modal content (hidden; shown in the shared modal sheet) -->
+            <!-- modal content -- capacity building -->
+            <div class="focus-card-modal">
+              <div class="modal-sheet__text">
+                <div class="modal-sheet-header">
+                  <h2>Capacity Building</h2>
+                  <p class="modal-sheet__lead">
+                    Strengthening skills, knowledge, and institutional capacity.
+                  </p>
+                </div>
+
+                <p>
+                  Sustainable development requires more than resources. It
+                  requires the knowledge, skills, and institutional capacity to
+                  turn ideas into effective action.
+                </p>
+
+                <p>
+                  StarDIP supports individuals, communities, and institutions
+                  through learning, training, technical support, and
+                  knowledge-sharing initiatives that strengthen their ability to
+                  deliver meaningful results.
+                </p>
+
+                <div class="modal-content-section">
+                  <h4>Our focus</h4>
+                  <p>
+                    We help strengthen the capabilities of people and
+                    organizations working towards community development.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our areas of focus include:</h4>
+                  <ul>
+                    <li>Training and skills development.</li>
+                    <li>Institutional strengthening.</li>
+                    <li>Technical assistance and advisory support.</li>
+                    <li>Community leadership development.</li>
+                    <li>Training for frontline and community workers.</li>
+                    <li>Organizational development.</li>
+                    <li>Knowledge sharing and learning.</li>
+                    <li>Programme planning and implementation support.</li>
+                    <li>Monitoring, evaluation, and learning.</li>
+                  </ul>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Why it matters</h4>
+                  <p>
+                    Limited skills, resources, and institutional systems can
+                    affect how effectively development initiatives are designed
+                    and delivered. Strengthening local capacity helps
+                    individuals and organizations respond to challenges and
+                    sustain progress.
+                  </p>
+                </div>
+
+                <div class="modal-content-section">
+                  <h4>Our goal</h4>
+                  <p>
+                    To strengthen people, institutions, and community systems
+                    with the knowledge and capabilities needed to drive
+                    sustainable development.
+                  </p>
+                </div>
+              </div>
+              <div class="focus-button-wrapper">
+                <!-- <a href="#partnerships" class="btn btn--primary"
+                  >Work With Us
+                </a> -->
+                <a href="contact-form.html" class="btn btn--secondary"
+                  >Partner With Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTNERSHIPS -->
+      <section class="partnerships" id="partnerships">
+        <div class="partnerships-wrapper">
+          <div
+            class="partnerships-image"
+            role="img"
+            aria-label="Community training session"
+          >
+            <img src="/images/growing.jfif" alt="image-gowing-together" />
+          </div>
+
+          <div class="partnerships-text">
+            <span class="eyebrow">
+              <div class="eyebrow-dot"></div>
+              Partnerships
+            </span>
+            <div class="partnerships-text-content">
+              <h2>Working Together for Greater Impact</h2>
+              <p>
+                We support individuals, community groups, civil society
+                organizations and institutions through training, mentoring and
+                technical support.
+              </p>
+            </div>
+            <a href="contact-form.html" class="btn btn--primary btn--with-icon"
+              >Partner With Us
+              <i class="ph ph-arrow-right btn--primary-icon"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- modal sheet (shared; content is copied from the clicked card) -->
+      <dialog class="modal-sheet" id="focus-modal">
+        <div class="modal-sheet__panel">
+          <button
+            type="button"
+            class="modal-sheet__close"
+            aria-label="Close"
+            data-modal-close
+          >
+            <i class="ph-bold ph-x" aria-hidden="true"></i>
+          </button>
+          <div class="modal-sheet__content"></div>
+        </div>
+      </dialog>
     </main>
 
+    <!-- ─── FOOTER ───────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="cta-banner">
+        <div class="cta-banner-content">
+          <h2>Let's Create Impact Together</h2>
+          <p>
+            Whether you want to collaborate, strengthen your organization's
+            capacity or support a community programme, let's explore what we can
+            achieve together.
+          </p>
 
-      <!-- ─── FOOTER ───────────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="cta-banner">
-      <div class="cta-banner-content">
-        <h2>Let's Create Impact Together</h2>
-        <p>Whether you want to collaborate, strengthen your organization's capacity or support a community programme, let's explore what we can achieve together.</p>
-
-        <div class="cta-banner-actions">
-          <a href="#" class="btn btn--primary btn--with-icon">Partner With Us <i class="ph ph-arrow-right btn--primary-icon"></i></a>
-          <a href="#" class="btn btn--ghost btn--on-solid-bg">Explore Our Work</a>
-        </div>
-    </div>
-
-    </div>
-
-    <div class="footer-inner">
-
-      <!-- Brand column -->
-      <div class="footer-brand">
-        <img src="/logo/Star sec brand-white.svg" alt="StarDIP" class="footer-logo">
-        <p>STAR — Development Impact Partners — connects capital, expertise and community to accelerate sustainable development</p>
-        <div class="footer-socials">
-          <a href="#" class="footer-social-btn" aria-label="Facebook">
-            <i class="ph-bold ph-facebook-logo" aria-hidden="true"></i>
-          </a>
-          <a href="#" class="footer-social-btn" aria-label="X / Twitter">
-            <i class="ph-bold ph-x-logo" aria-hidden="true"></i>
-          </a>
-          <a href="#" class="footer-social-btn" aria-label="LinkedIn">
-            <i class="ph-bold ph-linkedin-logo" aria-hidden="true"></i>
-          </a>
+          <div class="cta-banner-actions">
+            <a href="contact-form.html" class="btn btn--primary btn--with-icon"
+              >Partner With Us
+              <i class="ph ph-arrow-right btn--primary-icon"></i
+            ></a>
+            <a href="our-focus.html" class="btn btn--ghost btn--on-solid-bg"
+              >Explore Our Work</a
+            >
+          </div>
         </div>
       </div>
 
-      <!-- Nav columns -->
-      <nav class="footer-nav" aria-label="Footer">
-        <div class="footer-nav-col">
-          <h6>Explore</h6>
-          <a href="#">About</a>
-          <a href="#">Programs</a>
-          <a href="#">Impact</a>
-          <a href="#">Resources</a>
+      <div class="footer-inner">
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <img
+            src="/logo/Star sec brand-white.svg"
+            alt="StarDIP"
+            class="footer-logo"
+          />
+          <p>
+            STAR — Development Impact Partners — connects capital, expertise and
+            community to accelerate sustainable development
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <i class="ph-bold ph-facebook-logo" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="X / Twitter">
+              <i class="ph-bold ph-x-logo" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+              <i class="ph-bold ph-linkedin-logo" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer-nav-col">
-          <h6>Get involve</h6>
-          <a href="#">Partner</a>
-          <a href="#">Volunteer</a>
-          <a href="#">Support</a>
-        </div>
-        <div class="footer-nav-col">
-          <h6>Accountability</h6>
-          <a href="#">Privacy</a>
-          <a href="#">Governance</a>
-        </div>
-        <div class="footer-nav-col">
-          <h6>Contact</h6>
-          <a href="#">Email</a>
-          <a href="#">Phone number</a>
-        </div>
-      </nav>
 
-    </div>
+        <!-- Nav columns -->
+        <nav class="footer-nav" aria-label="Footer">
+          <div class="footer-nav-col">
+            <h6>Explore</h6>
+            <a href="about.html">About</a>
+            <a href="our-focus.html">Programs</a>
+            <!-- <a href="#">Impact</a>
+            <a href="#">Resources</a> -->
+          </div>
+          <div class="footer-nav-col">
+            <h6>Get involve</h6>
+            <a href="contact-form.html">Partner</a>
+            <a href="contact-form.html">Volunteer</a>
+            <a href="contact-form.html">Support</a>
+          </div>
+          <div class="footer-nav-col">
+            <h6>Accountability</h6>
+            <a href="#">Privacy</a>
+            <a href="#">Governance</a>
+          </div>
+          <div class="footer-nav-col">
+            <h6>Contact</h6>
+            <a href="#">Email</a>
+            <a href="#">Phone number</a>
+          </div>
+        </nav>
+      </div>
 
-
-    <!-- Bottom bar -->
-    <div class="footer-bottom">
-      <span>© 2026 STAR DEVELOPMENT IMPACT PARTNERS.</span>
-      <span>All Rights Reserved.</span>
-    </div>
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <span>© 2026 STAR DEVELOPMENT IMPACT PARTNERS.</span>
+        <span>All Rights Reserved.</span>
+      </div>
 
       <!-- Large watermark -->
-    <div class="footer-watermark" >
-      <img src="/images/footer-watermark.png" alt="watermark-stardip-logo">
-    </div>
-
-  </footer>
-
+      <div class="footer-watermark">
+        <img src="/images/footer-watermark.png" alt="watermark-stardip-logo" />
+      </div>
+    </footer>
 
     <script>
-        // ── Sticky nav scroll state ──────────────────────────────────────
-        const header = document.getElementById('site-header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 8);
-        }, { passive: true });
+      // ── Sticky nav scroll state ──────────────────────────────────────
+      const header = document.getElementById("site-header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          header.classList.toggle("scrolled", window.scrollY > 8);
+        },
+        { passive: true },
+      );
 
-        // ── Mobile menu ──────────────────────────────────────────────────
-        const navToggle  = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('nav-mobile-menu');
+      // ── Modal sheet (native <dialog> + showModal) ────────────────────
+      const focusModal = document.getElementById("focus-modal");
+      const focusModalContent = focusModal.querySelector(
+        ".modal-sheet__content",
+      );
 
-        navToggle.addEventListener('click', () => {
-            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', String(!isOpen));
-            mobileMenu.setAttribute('aria-hidden', String(isOpen));
-            mobileMenu.classList.toggle('open', !isOpen);
-            document.body.classList.toggle('nav-open', !isOpen);
+      document.querySelectorAll("[data-modal-open]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const template = btn
+            .closest(".focus-card")
+            ?.querySelector(".focus-card-modal");
+          if (!template) return;
+
+          focusModalContent.replaceChildren(
+            ...[...template.children].map((el) => el.cloneNode(true)),
+          );
+          focusModal.setAttribute(
+            "aria-label",
+            template.querySelector("h2")?.textContent ?? "",
+          );
+          focusModal.showModal();
         });
+      });
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-            navToggle.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            mobileMenu.classList.remove('open');
-            document.body.classList.remove('nav-open');
+      focusModal
+        .querySelector("[data-modal-close]")
+        .addEventListener("click", () => focusModal.close());
+
+      // Backdrop click, or any link inside the sheet, closes it
+      focusModal.addEventListener("click", (e) => {
+        if (
+          e.target === focusModal ||
+          e.target.closest(".modal-sheet__content a")
+        ) {
+          focusModal.close();
+        }
+      });
+
+      // ── Scroll reveal: heading, then cards staggered per batch ───────
+      const revealTargets = document.querySelectorAll(
+        ".our-focus-header, .focus-cards-wrapper > .focus-card",
+      );
+      // Reduced motion keeps a plain fade (CSS drops movement + stagger delay)
+      {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries
+              .filter((entry) => entry.isIntersecting)
+              .forEach((entry, i) => {
+                // 60ms between cards revealed together (capped at 4 steps)
+                entry.target.style.setProperty(
+                  "--reveal-delay",
+                  `${Math.min(i, 4) * 60}ms`,
+                );
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+              });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+        revealTargets.forEach((el) => {
+          el.classList.add("reveal");
+          revealObserver.observe(el);
         });
-    });
+      }
+
+      // ── Mobile menu ──────────────────────────────────────────────────
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileMenu = document.getElementById("nav-mobile-menu");
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileMenu.setAttribute("aria-hidden", String(isOpen));
+        mobileMenu.classList.toggle("open", !isOpen);
+        document.body.classList.toggle("nav-open", !isOpen);
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navToggle.setAttribute("aria-expanded", "false");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          mobileMenu.classList.remove("open");
+          document.body.classList.remove("nav-open");
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

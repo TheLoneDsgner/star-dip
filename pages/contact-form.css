@@ -1,0 +1,96 @@
+.main {
+    /* background-color: red; */
+    background-image: radial-gradient(circle, #e4e1e166 2px, #fdfdfd00 2px);
+    
+}
+
+.bg-text {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100vh;
+    /* background-color: #110101; */
+     /* background-position: 0 0, 25px 25px; */
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle, #e4e1e1 2px, #0000 2px);
+}
+
+.contact {
+    width: min(100% - 2rem, 900px);
+  margin-inline: auto;
+  padding-block-start: var(--space-10);
+  padding-block-end: var(--space-7);
+  /* margin-block: var(--space-10); */
+}
+
+.contact-header {
+    width: calc(100% - 204px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* page spacing between the intro and the form card */
+.contact > .form {
+    margin-block-start: var(--space-5);
+}
+
+.contact-header-text h1 {
+    font-family: var(--heading-1-font-family);
+    font-size: var(--heading-1-font-size);
+    line-height: var(--heading-1-line-height);
+    font-weight: var(--heading-1-font-weight);
+    letter-spacing: var(--heading-1-letter-spacing);
+    color: var(--text);
+    text-wrap: balance;
+    margin-block-end: var(--space-1);
+}
+
+.contact-header-text p {
+    max-width: min(100% - 196px);
+    font-family: var(--body-medium-regular-font-family);
+    font-size: var(--body-medium-regular-font-size);
+    font-weight: var(--body-medium-regular-font-weight);
+    line-height: var(--body-medium-regular-line-height);
+    letter-spacing: var(--body-medium-regular-letter-spacing);
+    color: var(--text-muted);
+    opacity: 0.78;
+    text-wrap: pretty;
+}
+
+.eyebrow--back {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3);
+  color: var(--text-muted);
+  
+    transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .eyebrow--back:hover {
+    background: var(--action-secondary-hover);
+  }
+}
+.eyebrow--back:not(:disabled):not([aria-disabled="true"]):active {
+  transform: scale(0.97);
+  border-color: var(--border-subtle);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 540px) {
+    .contact-header {
+        width: calc(100% - 0px);
+    }
+
+    .contact-header-text p {
+        max-width: min(100% - 0px);
+    }
+    
+    
+}

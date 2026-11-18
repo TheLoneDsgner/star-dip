@@ -10,7 +10,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
   width: fit-content;
 
   /* Geometry */
@@ -44,14 +44,13 @@
 
 /* Active press — shared across all variants */
 .btn:not(:disabled):not([aria-disabled="true"]):active {
-  transform: scale(0.95);
+  transform: scale(0.97);
 }
 
 /* Focus — visible keyboard ring on every variant */
 .btn:focus-visible {
   outline: 2px solid transparent;
   box-shadow: var(--focus-ring);
-    color: #ffffff;
 }
 
 /* ── Primary ──────────────────────────────────────────────────────── */
@@ -84,7 +83,9 @@
     background: #83FD80;
     box-shadow: 0 20px 40px -16px rgba(22, 30, 133, 0.7);
     color: var(--on-action-secondary);
-    transition: background 0.3s ease-in-out;
+    /* (removed `transition: background 0.3s ease-in-out`: it replaced the
+       whole .btn transition list while hovered, so press-scale and shadow
+       snapped, and ease-in-out felt sluggish) */
   }
 }
 
@@ -118,7 +119,7 @@
   .btn--ghost:not(:disabled):not([aria-disabled="true"]):hover {
     background: var(--surface-hover);
     background: hsla(0, 0%, 100%, 0.12);
-    border-color: var(--border-strong);
+    border-color: var(--border-subtle);
     color: var(--text-link-hover);
   }
 }
@@ -178,9 +179,9 @@
 /* ── Size modifiers ───────────────────────────────────────────────── */
 .btn--sm {
   padding: var(--space-2) var(--space-4);
-  font-size: var(--footnote-font-size);
-  font-weight: var(--label-semibold-font-weight);
-  letter-spacing: var(--label-semibold-letter-spacing);
+  font-size: var(--label-medium-size);
+  font-weight: var(--label-medium-font-weight);
+  letter-spacing: var(--label-medium-letter-spacing);
 }
 
 .btn--lg {
